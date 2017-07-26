@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/var/log/httpd'
+let g:netrw_dirhist_2='/home/a.petrukhin/Job/mapuppet/hieradata'
+let g:netrw_dirhist_3='/home/a.petrukhin/Job/mapuppet/modules/mailapigo/templates'
+let g:netrw_dirhist_4='/home/a.petrukhin/Job/mapuppet'
+let g:netrw_dirhist_5='/home/a.petrukhin/Job/Support'
+let g:netrw_dirhist_6='/home/a.petrukhin/.vim/colors/Zenburn'
+let g:netrw_dirhist_7='/home/a.petrukhin/.vim'
