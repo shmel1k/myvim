@@ -1,7 +1,8 @@
 "colorscheme jellybeans
 "colorscheme bubblegum-256-dark
-colorscheme Benokai
+"colorscheme Benokai
 colorscheme gruvbox
+set background=dark
 "colorscheme Tomorrow-Night
 "colorscheme codeschool
 "colorscheme zenburn
@@ -22,10 +23,19 @@ filetype plugin on
 set colorcolumn=140
 set t_Co=256
 set completeopt-=preview
+
+"Trailing list
+set list
+set listchars=tab:>-,trail:$
+
 "Gocode settings
 let g:go_fmt_command = "goimports"
 au BufRead,BufNewFile *.go set filetype=go
 autocmd FileType go map <C-b> :GoReferrers<CR>
+
+autocmd FileType c ClangFormatAutoEnable
+autocmd FileType h ClangFormatAutoEnable
+autocmd FileType cpp ClangFormatAutoEnable
 
 "YouCompleteMe settings
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -44,21 +54,6 @@ let g:ycm_python_binary_path='python'
 map <C-n> :NERDTreeToggle<CR>
 map <C-k> gT
 map <C-l> gt
-
-"Neocomplete settings
-"let g:neocomplete#enable_at_startup = 1
-"let g:neocomplete#enable_smart_case = 1
-"let g:neocomplete#auto_completion_start_length = 1
-"let g:neocomplete#enable_auto_select = 1
-
-" extract keywords from vim syntax files
-"let g:ycm_seed_identifiers_with_syntax=1
-
-" show preview window with function prototype on top
-"let g:ycm_add_preview_to_completeopt=1
-
-" close preview window after exiting insert mode
-"let g:ycm_autoclose_preview_window_after_insertion=1
 
 "Tagbar settings
 let g:tagbar_type_go = {
@@ -99,4 +94,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nsf/gocode', {'rtp': 'vim'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'severin-lemaignan/vim-minimap'
+Plug 'jiangmiao/auto-pairs'
+Plug 'rhysd/vim-clang-format'
 call plug#end()
