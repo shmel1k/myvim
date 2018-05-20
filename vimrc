@@ -1,9 +1,9 @@
 "colorscheme jellybeans
-"colorscheme bubblegum-256-dark 
+"colorscheme bubblegum-256-dark
 set t_Co=256
-colorscheme gruvbox
-set background=dark
-"colorscheme Tomorrow-Night
+"colorscheme gruvbox
+"colorscheme darcula
+"set background=dark "colorscheme Tomorrow-Night
 "colorscheme codeschool
 "colorscheme zenburn
 "Default settings
@@ -27,7 +27,6 @@ set listchars=tab:>-,trail:$
 
 " Don’t add empty newlines at the end of files
 set binary
-set noeol
 
 "Gocode settings
 let g:go_fmt_command = "goimports"
@@ -43,7 +42,6 @@ let g:ycm_show_diagnostics_ui=0
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
-let g:ycm_register_as_syntastic_checker=0
 let g:ycm_server_python_interpreter='python'
 "let g:ycm_python_binary_path='/usr/bin/:/usr/lib/python2.7/site-packages/'
 "
@@ -52,15 +50,6 @@ let g:ycm_server_python_interpreter='python'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height=2
-"let g:syntastic_c_include_dirs = [ '/usr/include', '/usr/local/mpop/include', 'core/include', 'swa/include', 'sota/include'  ]
-let g:syntastic_c_checkers = []
-let g:syntastic_cpp_checkers = []
-let g:syntastic_go_checkers = ['gotype', 'maligned', 'golint', 'go vet']
 
 "C++ Highlight settings
 let g:cpp_class_scope_highlight = 1
@@ -72,7 +61,19 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-k> gT
 map <C-l> gt
 map <C-i> :YcmCompleter GoToDeclaration<CR>
-vmap <C-m> :ClangFormat
+map <C-d> "_d
+let g:UltiSnipsExpandTrigger="<c-m>"
+autocmd FileType go nnoremap <C-c> :GoCoverageToggle <CR>
+
+"ale settings
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_set_quickfix = 1
+let g:ale_go_gometalinter_options = "--config=" . $HOME . "/.gometalinter.json"
+let g:ale_go_gometalinter_executable = 'gometalinter'
+let g:ale_linters = {
+            \ 'go': ['gometalinter'],
+            \ }
 
 "Tagbar settings
 let g:tagbar_type_go = {
@@ -115,9 +116,16 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chr4/nginx.vim'
 Plug 'rhysd/vim-clang-format'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/seoul256.vim'
+Plug 'w0rp/ale'
+"Plug 'xolox/vim-lua-ftplugin'
+"Plug 'xolox/vim-misc'
+"Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
+colorscheme seoul256
+"colorscheme PaperColor
 set expandtab
 hi QuickFixLine cterm=None ctermbg=256 guibg=#ffff00
