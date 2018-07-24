@@ -36,14 +36,12 @@ autocmd FileType go map <C-b> :GoReferrers<CR>
 "YouCompleteMe settings
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_autoclose_completion_window_after_selecting = 3
 let g:ycm_confirm_extra_conf=0
 let g:ycm_show_diagnostics_ui=0
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_server_python_interpreter='python'
-"let g:ycm_python_binary_path='/usr/bin/:/usr/lib/python2.7/site-packages/'
 "
 
 "Syntastics settings
@@ -74,6 +72,9 @@ let g:ale_go_gometalinter_executable = 'gometalinter'
 let g:ale_linters = {
             \ 'go': ['gometalinter'],
             \ }
+
+"gitgutter settings
+autocmd BufWritePost * GitGutter
 
 "Tagbar settings
 let g:tagbar_type_go = {
@@ -116,16 +117,13 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chr4/nginx.vim'
 Plug 'rhysd/vim-clang-format'
-"Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/seoul256.vim'
 Plug 'w0rp/ale'
-"Plug 'xolox/vim-lua-ftplugin'
-"Plug 'xolox/vim-misc'
-"Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 colorscheme seoul256
 "colorscheme PaperColor
+"colorscheme monokai
 set expandtab
 hi QuickFixLine cterm=None ctermbg=256 guibg=#ffff00
