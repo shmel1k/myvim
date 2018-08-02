@@ -3,7 +3,7 @@
 set t_Co=256
 "colorscheme gruvbox
 "colorscheme darcula
-"set background=dark "colorscheme Tomorrow-Night
+""colorscheme Tomorrow-Night
 "colorscheme codeschool
 "colorscheme zenburn
 "Default settings
@@ -120,10 +120,15 @@ Plug 'rhysd/vim-clang-format'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/seoul256.vim'
 Plug 'w0rp/ale'
+"Plug 'NLKNguyen/papercolor-theme'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
-colorscheme seoul256
 "colorscheme PaperColor
+colorscheme solarized
+"colorscheme seoul256
+set background=light
+hi SpecialKey cterm=NONE ctermbg=NONE
 "colorscheme monokai
 set expandtab
 hi QuickFixLine cterm=None ctermbg=256 guibg=#ffff00
