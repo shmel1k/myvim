@@ -128,7 +128,7 @@ call plug#end()
 colorscheme solarized
 "colorscheme seoul256
 set background=light
-hi SpecialKey cterm=NONE ctermbg=NONE
+hi SpecialKey cterm=NONE ctermbg=NONE ctermfg=153
 "colorscheme monokai
 set expandtab
 hi QuickFixLine cterm=None ctermbg=256 guibg=#ffff00
