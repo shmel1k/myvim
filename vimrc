@@ -122,12 +122,14 @@ Plug 'junegunn/seoul256.vim'
 Plug 'w0rp/ale'
 "Plug 'NLKNguyen/papercolor-theme'
 Plug 'altercation/vim-colors-solarized'
+Plug 'rakr/vim-one'
 call plug#end()
 
 "colorscheme PaperColor
-colorscheme solarized
+"colorscheme solarized
 "colorscheme seoul256
-set background=light
+"set background=light
+colorscheme one
 hi SpecialKey cterm=NONE ctermbg=NONE ctermfg=153
 "colorscheme monokai
 set expandtab
