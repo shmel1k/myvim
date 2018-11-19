@@ -1,13 +1,13 @@
 "colorscheme jellybeans
-"colorscheme bubblegum-256-dark
-set t_Co=256
+"colorscheme bubblegum-256-dark set t_Co=256
 "colorscheme gruvbox
 "colorscheme darcula
-""colorscheme Tomorrow-Night
-"colorscheme codeschool
+""colorscheme Tomorrow-Night "colorscheme codeschool
 "colorscheme zenburn
 "Default settings
 set hlsearch
+set syntax=on
+set t_Co=256
 set tabstop=4
 set shiftwidth=4
 set backspace=2
@@ -120,17 +120,24 @@ Plug 'rhysd/vim-clang-format'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/seoul256.vim'
 Plug 'w0rp/ale'
-"Plug 'NLKNguyen/papercolor-theme'
 Plug 'altercation/vim-colors-solarized'
-Plug 'rakr/vim-one'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-"colorscheme PaperColor
+set mouse=
+set background=dark
+colorscheme seoul256
+"colorscheme one
+"colorscheme palenight
+"colorscheme gruvbox
+" FOR SOLARIZED
 "colorscheme solarized
-"colorscheme seoul256
-"set background=light
-colorscheme one
-hi SpecialKey cterm=NONE ctermbg=NONE ctermfg=153
+"hi SpecialKey cterm=NONE ctermbg=NONE ctermfg=23
+" FOR ONE COLORSCHEME
+"colorscheme skittles-berry
+"hi SpecialKey cterm=NONE ctermbg=NONE ctermfg=153
+"
+
 "colorscheme monokai
 set expandtab
 hi QuickFixLine cterm=None ctermbg=256 guibg=#ffff00
