@@ -1,13 +1,7 @@
-"colorscheme jellybeans
-"colorscheme bubblegum-256-dark set t_Co=256
-"colorscheme gruvbox
-"colorscheme darcula
-""colorscheme Tomorrow-Night "colorscheme codeschool
-"colorscheme zenburn
 "Default settings
 set hlsearch
-set syntax=on
 set t_Co=256
+set syntax=on
 set tabstop=4
 set shiftwidth=4
 set backspace=2
@@ -43,6 +37,9 @@ let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_server_python_interpreter='python'
 "
+"
+" Omnisharp settings
+"let g:OmniSharp_server_use_mono = 1
 
 "Syntastics settings
 set statusline+=%#warningmsg#
@@ -122,11 +119,18 @@ Plug 'junegunn/seoul256.vim'
 Plug 'w0rp/ale'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
+Plug 'jdkanani/vim-material-theme'
+Plug 'hzchirs/vim-material'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 set mouse=
-set background=dark
-colorscheme seoul256
+"set background=dark
+"colorscheme seoul256
+set background=light
+colorscheme PaperColor
+"
+
 "colorscheme one
 "colorscheme palenight
 "colorscheme gruvbox
