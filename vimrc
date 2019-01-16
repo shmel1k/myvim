@@ -122,6 +122,7 @@ Plug 'morhetz/gruvbox'
 Plug 'jdkanani/vim-material-theme'
 Plug 'hzchirs/vim-material'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 set mouse=
@@ -129,6 +130,8 @@ set mouse=
 "colorscheme seoul256
 set background=light
 colorscheme PaperColor
+let g:ft_bold    = " cterm=NONE "
+"let g:airline_theme = "material"
 "
 
 "colorscheme one
