@@ -16,6 +16,8 @@ filetype plugin on
 set colorcolumn=140
 set completeopt-=preview
 "Trailing list
+set foldmethod=indent
+set foldlevel=42
 set list
 set listchars=tab:>-,trail:$
 
@@ -25,6 +27,9 @@ set binary
 "Gocode settings
 let g:go_fmt_command = "goimports"
 au BufRead,BufNewFile *.go set filetype=go
+
+"Delete trailing spaces on save.
+""autocmd BufWritePre * %s/\s\+$//e
 autocmd FileType go map <C-b> :GoReferrers<CR>
 
 "YouCompleteMe settings
@@ -63,12 +68,17 @@ autocmd FileType go nnoremap <C-c> :GoCoverageToggle <CR>
 "ale settings
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
+let g:ale_fix_on_save = 1
 let g:ale_set_quickfix = 1
-let g:ale_go_gometalinter_options = "--config=" . $HOME . "/.gometalinter.json"
-let g:ale_go_gometalinter_executable = 'gometalinter'
-let g:ale_linters = {
-            \ 'go': ['gometalinter'],
-            \ }
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+let g:ale_go_golangci_lint_executable  = 'golangci-lint'
+let g:ale_go_golangci_lint_options = '--disable-all --enable=staticcheck --enable=golint --enable=deadcode'
+
+"Python
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff=1
 
 "gitgutter settings
 autocmd BufWritePost * GitGutter
@@ -123,12 +133,13 @@ Plug 'jdkanani/vim-material-theme'
 Plug 'hzchirs/vim-material'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tell-k/vim-autopep8'
 call plug#end()
 
 set mouse=
-"set background=dark
-"colorscheme seoul256
 set background=light
+"colorscheme seoul256
+""set background=dark
 colorscheme PaperColor
 let g:ft_bold    = " cterm=NONE "
 "let g:airline_theme = "material"
