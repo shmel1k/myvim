@@ -69,12 +69,15 @@ autocmd FileType go nnoremap <C-c> :GoCoverageToggle <CR>
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_fix_on_save = 1
-let g:ale_set_quickfix = 1
+let g:ale_set_quickfix = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
-let g:ale_go_golangci_lint_executable  = 'golangci-lint'
-let g:ale_go_golangci_lint_options = '--disable-all --enable=staticcheck --enable=golint --enable=deadcode'
+let g:ale_go_golangci_lint_package = 1
+let g:ale_linters = {'go': ['golangci-lint']}
+""let g:ale_go_golangci_lint_executable  = 'golangci-lint'
+let g:ale_go_golangci_lint_options = '--no-config --disable-all --enable=staticcheck --enable=golint --enable=deadcode --enable=unparam --enable=maligned --enable=typecheck'
+""let g:ale_go_golangci_lint_options = '--disable-all --enable=golint --enable=govet --enable=gofmt'
 
 "Python
 let g:autopep8_on_save = 1
@@ -138,6 +141,7 @@ call plug#end()
 
 set mouse=
 set background=light
+""set background=dark
 "colorscheme seoul256
 ""set background=dark
 colorscheme PaperColor
