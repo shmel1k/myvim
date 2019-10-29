@@ -123,17 +123,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'nsf/gocode', {'rtp': 'vim'}
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'severin-lemaignan/vim-minimap'
 Plug 'jiangmiao/auto-pairs'
-Plug 'chr4/nginx.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-airline/vim-airline'
-Plug 'junegunn/seoul256.vim'
 Plug 'w0rp/ale'
-Plug 'altercation/vim-colors-solarized'
-Plug 'morhetz/gruvbox'
-Plug 'jdkanani/vim-material-theme'
-Plug 'hzchirs/vim-material'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tell-k/vim-autopep8'
@@ -145,6 +138,7 @@ set background=light
 "colorscheme seoul256
 ""set background=dark
 colorscheme PaperColor
+""colorscheme gruvbox
 let g:ft_bold    = " cterm=NONE "
 "let g:airline_theme = "material"
 "
