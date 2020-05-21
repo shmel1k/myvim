@@ -79,12 +79,22 @@ let g:ale_linters = {'go': ['golangci-lint']}
 let g:ale_go_golangci_lint_options = '--no-config --disable-all --enable=staticcheck --enable=golint --enable=deadcode --enable=unparam --enable=maligned --enable=typecheck'
 ""let g:ale_go_golangci_lint_options = '--disable-all --enable=golint --enable=govet --enable=gofmt'
 
+" Fix auto-indentation for YAML files
+augroup yaml_fix
+    autocmd!
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
+augroup END
+
 "Python
 let g:autopep8_on_save = 1
 let g:autopep8_disable_show_diff=1
 
 "gitgutter settings
 autocmd BufWritePost * GitGutter
+
+"Rust settings
+let g:rustfmt_autosave = 1
+let g:ycm_rust_src_path = '/Users/shmel1k/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src'
 
 "Tagbar settings
 let g:tagbar_type_go = {
@@ -124,35 +134,35 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nsf/gocode', {'rtp': 'vim'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'rhysd/vim-clang-format'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tell-k/vim-autopep8'
+Plug 'plasticboy/vim-markdown'
+Plug 'jacoborus/tender.vim'
+Plug 'morhetz/gruvbox'
+Plug 'arzg/vim-colors-xcode'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set mouse=
-set background=light
-""set background=dark
+"set background=light
+"set background=dark
 "colorscheme seoul256
-""set background=dark
-colorscheme PaperColor
+"colorscheme PaperColor
 ""colorscheme gruvbox
-let g:ft_bold    = " cterm=NONE "
+"colorscheme tender
+"colorscheme xcodelight
+colorscheme xcodedark
 "let g:airline_theme = "material"
 "
 
-"colorscheme one
-"colorscheme palenight
-"colorscheme gruvbox
 " FOR SOLARIZED
 "colorscheme solarized
 "hi SpecialKey cterm=NONE ctermbg=NONE ctermfg=23
-" FOR ONE COLORSCHEME
-"colorscheme skittles-berry
-"hi SpecialKey cterm=NONE ctermbg=NONE ctermfg=153
-"
 
 "colorscheme monokai
 set expandtab
