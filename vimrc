@@ -146,17 +146,19 @@ Plug 'jacoborus/tender.vim'
 Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
 Plug 'rust-lang/rust.vim'
+Plug 'google/vim-colorscheme-primary'
 call plug#end()
 
 set mouse=
 "set background=light
 "set background=dark
+"colorscheme primary
 "colorscheme seoul256
-"colorscheme PaperColor
+colorscheme PaperColor
 ""colorscheme gruvbox
 "colorscheme tender
 "colorscheme xcodelight
-colorscheme xcodedark
+"colorscheme xcodedark
 "let g:airline_theme = "material"
 "
 
