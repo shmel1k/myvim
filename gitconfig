@@ -1,0 +1,15 @@
+[user]
+# Please adapt and uncomment the following lines:
+        name = Aleksandr Petrukhin
+        email = shmeleine@gmail.com
+[core]
+        excludesfile = /Users/shmel1k/.gitignore_global
+        editor = vim
+[alias]
+    co = checkout
+    cob = checkout -b
+    br = branch
+    crp = cherry-pick
+    logp = log --pretty=oneline
+    logns = log --name-status
+    diffs = diff --staged

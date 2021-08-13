@@ -80,10 +80,10 @@ let g:ale_go_golangci_lint_options = '--no-config --disable-all --enable=staticc
 ""let g:ale_go_golangci_lint_options = '--disable-all --enable=golint --enable=govet --enable=gofmt'
 
 " Fix auto-indentation for YAML files
-augroup yaml_fix
-    autocmd!
-    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
-augroup END
+"augroup yaml_fix
+"    autocmd!
+"    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
+"augroup END
 
 "Python
 let g:autopep8_on_save = 1
@@ -147,20 +147,22 @@ Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
 Plug 'rust-lang/rust.vim'
 Plug 'google/vim-colorscheme-primary'
+Plug 'chiendo97/intellij.vim'
 call plug#end()
 
 set mouse=
 "set background=light
-"set background=dark
+set background=dark
+"colorscheme intellij
 "colorscheme primary
 "colorscheme seoul256
 colorscheme PaperColor
-""colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme tender
 "colorscheme xcodelight
 "colorscheme xcodedark
+"colorscheme iceberg
 "let g:airline_theme = "material"
-"
 
 " FOR SOLARIZED
 "colorscheme solarized
