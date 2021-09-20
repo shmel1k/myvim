@@ -65,6 +65,8 @@ map <C-d> "_d
 let g:UltiSnipsExpandTrigger="<c-m>"
 autocmd FileType go nnoremap <C-c> :GoCoverageToggle <CR>
 
+let g:indentLine_char = '⦙'
+
 "ale settings
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
@@ -148,6 +150,7 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'rust-lang/rust.vim'
 Plug 'google/vim-colorscheme-primary'
 Plug 'chiendo97/intellij.vim'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 set mouse=
