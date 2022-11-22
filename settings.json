@@ -1,0 +1,69 @@
+{
+    "clangd.path": "/home/shmel1k/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/14.0.3/clangd_14.0.3/bin/clangd",
+    "editor.fontFamily": "Jetbrains Mono",
+    "editor.fontSize": 14,
+    "editor.lineNumbers": "relative",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": false
+    },
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "golang.go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            "source.fixAll": false
+        }
+    },
+    "editor.renderWhitespace": "all",
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
+    "go.buildFlags": [],
+    "go.toolsEnvVars": {
+        "CGO_ENABLED": "0"
+    },
+    "gopls": {
+        "build.expandWorkspaceToModule": false  
+    },
+    "clang-format.style": "",
+    "clang-format.assumeFilename": ".clang-format",
+    "clang-format.fallbackStyle": "google",
+    "clangd.checkUpdates": true,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_sortIncludes": true,
+    "editor.bracketPairColorization.enabled": true,
+    "python.formatting.autopep8Args": [
+        "--max-line-length=140"
+    ],
+    "editor.foldingMaximumRegions": 10000,
+    "editor.minimap.enabled": false,
+    "go.alternateTools": {
+    
+    },
+    "workbench.preferredDarkColorTheme": "One Monokai",
+    "workbench.preferredLightColorTheme": "papercolor-vscode-light",
+    "workbench.colorTheme": "papercolor-vscode-light",
+    "workbench.colorCustomizations": {
+        "[papercolor-vscode-light]": {
+            "editor.lineHighlightBackground": "#bcbcbc56",
+            "editor.selectionBackground": "#bcbcbca0",
+            "editorWhitespace.foreground": "#b1b1b1d3"
+        }
+    },
+    "window.zoomLevel": 1,
+    "todohighlight.keywords": [
+        "XXX", "TODO", "FIXME",
+        "BUG"
+    ],
+    "todohighlight.defaultStyle": {
+        "backgroundColor": "#0000ffff"
+    },
+    "[proto3]": {
+        "editor.defaultFormatter": "zxh404.vscode-proto3"
+    },
+}
