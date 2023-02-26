@@ -8,6 +8,7 @@ set backspace=2
 set nocompatible
 set term=screen-256color
 set number
+set relativenumber
 set autoread
 set mouse=a
 set exrc
@@ -26,7 +27,30 @@ set binary
 
 "Gocode settings
 let g:go_fmt_command = "goimports"
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
 au BufRead,BufNewFile *.go set filetype=go
+
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 1
+
+let g:rainbow_active = 1
+
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
 
 "Delete trailing spaces on save.
 ""autocmd BufWritePre * %s/\s\+$//e
@@ -38,9 +62,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf=0
 let g:ycm_show_diagnostics_ui=0
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_collect_identifiers_from_tags_files=1
+"let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_seed_identifiers_with_syntax=1
-let g:ycm_server_python_interpreter='python'
+let g:signify_vcs_list = ["arc", "git"]
+"let g:ycm_server_python_interpreter='python'
 "
 "
 " Omnisharp settings
@@ -52,10 +77,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 "C++ Highlight settings
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-
 "Bindings settings
 map <C-n> :NERDTreeToggle<CR>
 map <C-k> gT
@@ -82,14 +103,15 @@ let g:ale_go_golangci_lint_options = '--no-config --disable-all --enable=staticc
 ""let g:ale_go_golangci_lint_options = '--disable-all --enable=golint --enable=govet --enable=gofmt'
 
 " Fix auto-indentation for YAML files
-"augroup yaml_fix
-"    autocmd!
-"    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
-"augroup END
+augroup yaml_fix
+    autocmd!
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:>
+augroup END
 
 "Python
-let g:autopep8_on_save = 1
+"let g:autopep8_on_save = 1
 let g:autopep8_disable_show_diff=1
+let g:autopep8_aggressive=2
 
 "gitgutter settings
 autocmd BufWritePost * GitGutter
@@ -97,6 +119,8 @@ autocmd BufWritePost * GitGutter
 "Rust settings
 let g:rustfmt_autosave = 1
 let g:ycm_rust_src_path = '/Users/shmel1k/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src'
+
+autocmd BufWritePre * :%s/\s\+$//e
 
 "Tagbar settings
 let g:tagbar_type_go = {
@@ -149,22 +173,24 @@ Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
 Plug 'rust-lang/rust.vim'
 Plug 'google/vim-colorscheme-primary'
-Plug 'chiendo97/intellij.vim'
-Plug 'Yggdroot/indentLine'
+Plug 'bfrg/vim-cpp-modern'
+"Plug 'chiendo97/intellij.vim'
+"Plug 'Yggdroot/indentLine'
+Plug 'vim-python/python-syntax'
+Plug 'frazrepo/vim-rainbow'
+Plug 'joshdick/onedark.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'pearofducks/ansible-vim'
+Plug 'kristijanhusak/vim-hybrid-material'
 call plug#end()
 
 set mouse=
-"set background=light
-set background=dark
-"colorscheme intellij
-"colorscheme primary
-"colorscheme seoul256
+set background=light
+"set background=dark
 colorscheme PaperColor
-"colorscheme gruvbox
-"colorscheme tender
+"colorscheme hybrid_material
 "colorscheme xcodelight
-"colorscheme xcodedark
-"colorscheme iceberg
+"colorscheme onedark
 "let g:airline_theme = "material"
 
 " FOR SOLARIZED
